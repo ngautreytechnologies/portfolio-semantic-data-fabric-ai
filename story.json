@@ -1,10 +1,27 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Portfolio AI Knowledge Fabric - Graph-Powered Semantic Layer",
-  "summary": "A SaaS-style platform that unobtrusively enriches enterprise knowledge by layering AI over a graph-powered semantic data fabric.",
-  "problem": "Organizations struggle with fragmented data spread across multiple silos, making it difficult to gain contextual insights, identify relationships between entities, and surface actionable knowledge. Traditional BI solutions are reactive, disconnected, and require manual curation.",
-  "solution": "Built a data-centric, graph-powered semantic layer that sits above existing enterprise systems. It ingests structured and unstructured data, constructs a knowledge graph, applies ML/NLP models for semantic enrichment, and exposes an API layer for SaaS applications to query knowledge contextually, without disrupting underlying systems.",
-  "tech_stack": [
+  "overview": "A SaaS-style platform that unobtrusively enriches enterprise knowledge by layering AI over a graph-powered semantic data fabric.",
+  "keyFeatures": [
+    "Graph database storing entities, relationships, and metadata",
+    "ETL pipelines to ingest data from internal systems and SaaS apps",
+    "ML/NLP enrichment sidecars for semantic understanding",
+    "Event-driven notifications for knowledge updates",
+    "API layer exposing contextual knowledge to SaaS services",
+    "Caching layer for high-throughput queries"
+  ],
+  "pros": [
+    "Instant contextual knowledge discovery",
+    "Non-intrusive AI enrichment without touching legacy systems",
+    "Scalable serverless architecture",
+    "High coverage of enterprise entities"
+  ],
+  "cons": [
+    "Complex integration across heterogeneous data sources",
+    "Maintaining low-latency semantic queries at scale",
+    "Ensuring consistency of dynamic knowledge updates",
+    "Handling high-volume unstructured and streaming data"
+  ],
+  "techStack": [
     "Python",
     "C#",
     "FastAPI",
@@ -21,66 +38,23 @@
     "CloudWatch",
     "AWS IAM"
   ],
-  "overview": {
-    "architecture": {
-      "styles": [
-        "Data-Centric",
-        "Semantic Layer",
-        "Event-Driven",
-        "Graph-Powered Knowledge Fabric",
-        "Serverless Microservices"
-      ],
-      "key_components": [
-        "Graph database storing entities, relationships, and metadata",
-        "ETL pipelines to ingest data from internal systems and SaaS apps",
-        "ML/NLP enrichment sidecars for semantic understanding",
-        "Event-driven notifications for knowledge updates",
-        "API layer exposing contextual knowledge to SaaS services",
-        "Caching layer for high-throughput queries"
-      ]
-    },
-    "design_patterns": [
-      "Sidecar AI for non-intrusive enrichment",
-      "Event Sourcing for knowledge updates",
-      "CQRS for separation of read/write workloads",
-      "Pub/Sub for decoupled processing",
-      "Knowledge Graph Modeling"
-    ]
-  },
-  "architecture": {
-    "style": "Graph-Powered Semantic Data Fabric",
-    "key_components": [
-      "Neo4j Graph Database",
-      "Python AI Enrichment Sidecar",
-      "FastAPI API Layer",
-      "EventBridge / SQS for asynchronous events",
-      "AWS Lambda for lightweight transformations",
-      "S3 + Athena for analytical batch queries",
-      "Redis for caching",
-      "Step Functions for workflow orchestration"
-    ],
-    "diagram_url": "https://example.com/portfolio-ai-knowledge-fabric-architecture.png"
-  },
-  "challenges": [
-    "Integrating AI enrichment without disrupting existing systems",
-    "Mapping heterogeneous data sources into a unified knowledge graph",
-    "Maintaining low-latency semantic query responses at scale",
-    "Ensuring consistency and correctness across dynamically updated knowledge",
-    "Handling large-scale unstructured data and streaming events"
+  "tags": [
+    "AI",
+    "Architecture",
+    "AWS"
   ],
+  "problem": "Organizations struggle with fragmented data spread across multiple silos, making it difficult to gain contextual insights, identify relationships between entities, and surface actionable knowledge. Traditional BI solutions are reactive, disconnected, and require manual curation.",
+  "solution": "Built a data-centric, graph-powered semantic layer that sits above existing enterprise systems. It ingests structured and unstructured data, constructs a knowledge graph, applies ML/NLP models for semantic enrichment, and exposes an API layer for SaaS applications to query knowledge contextually, without disrupting underlying systems.",
+  "timeline": "2024-03 - 2024-08",
   "impact": {
     "metrics": {
-      "knowledge_discovery_speed": "5x faster than manual queries",
-      "operational_cost_reduction": "30% lower due to serverless enrichment",
-      "entity_relationship_coverage": "Expanded to 95% of critical enterprise entities"
+      "knowledge discovery speed": "5x faster than manual queries",
+      "operational cost reduction": "30% lower due to serverless enrichment",
+      "entity relationship coverage": "Expanded to 95% of critical enterprise entities"
     },
     "business_outcome": "Teams can discover contextual knowledge instantly, surface hidden relationships, and make data-driven decisions without touching or modifying underlying legacy systems."
   },
-  "links": {
-    "github": "https://github.com/your-username/portfolio-ai-knowledge-fabric",
-    "demo": "https://demo.portfolio-ai-knowledge-fabric.example",
-    "docs": "https://docs.portfolio-ai-knowledge-fabric.example"
-  },
+  "codeSnippets": {},
   "media": [
     {
       "type": "image",
@@ -91,54 +65,6 @@
       "type": "diagram",
       "url": "https://example.com/portfolio-ai-knowledge-fabric-architecture.png",
       "caption": "Graph-powered semantic data fabric architecture"
-    }
-  ],
-  "timeline": {
-    "start": "2024-03",
-    "end": "2024-08"
-  },
-  "tags": [
-    {
-      "name": "AI",
-      "summary": "Unobtrusive ML/NLP enrichment of enterprise knowledge",
-      "children": [
-        {
-          "name": "ML",
-          "summary": "Machine learning models applied to structured/unstructured data",
-          "children": [
-            { "name": "Entity Recognition" },
-            { "name": "Relationship Extraction" },
-            { "name": "Anomaly & Pattern Detection" }
-          ]
-        },
-        {
-          "name": "NLP",
-          "summary": "Semantic understanding for unstructured text",
-          "children": [
-            { "name": "Topic Modeling" },
-            { "name": "Text Embeddings" },
-            { "name": "Knowledge Summarization" }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Architecture",
-      "summary": "Graph-powered, data-centric, event-driven",
-      "children": [
-        { "name": "Data Fabric" },
-        { "name": "Event-Driven" },
-        { "name": "Sidecar AI" }
-      ]
-    },
-    {
-      "name": "AWS",
-      "summary": "Serverless and managed services for scalability",
-      "children": [
-        { "name": "Lambda" },
-        { "name": "S3 + Athena" },
-        { "name": "Step Functions" }
-      ]
     }
   ]
 }
